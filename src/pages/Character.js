@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-const Character = () => {
+const Character = ({ characterId }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  characterId = "5fcf91f4d8a2480017b91453";
+  console.log("characterId zz" + characterId);
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `http://localhost:4000/character`
+          `http://localhost:4000/character/${characterId}`
           // `https://lereacteur-vinted-api.herokuapp.com/offers`
         );
 
         setData(response.data);
         setIsLoading(false);
         // console.log({ data });
+        console.log("characterId" + characterId);
       };
       fetchCharacter();
     } catch (error) {
@@ -28,7 +31,7 @@ const Character = () => {
     <div>
       <div>
         <p>Page personnage</p>
-        {data.results.map((character, index) => {
+        {data.item.map((character, index) => {
           // console.log(result[0].thumbnail.path);
           // console.log(result.description);
           // const keys = Object.keys(item);
@@ -41,7 +44,9 @@ const Character = () => {
               <p>Fiche n°{index}</p>
 
               <img
-                src="http://i.annihil.us/u/prod/marvel/i/mg/3/a0/53c406e09649c.jpeg"
+                src={
+                  character.thumbnail.path + "." + character.thumbnail.extension
+                }
                 alt="imgfiche"
               />
               <p>Id : {character._id} </p>

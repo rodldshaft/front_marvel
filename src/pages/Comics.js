@@ -38,7 +38,7 @@ const Comics = () => {
             <div className="test" key={index}>
               <p>Fiche n°{index}</p>
 
-              <img src={result.thumbnail.path + ".jpeg"} alt="imgfiche" />
+              <img src={result.thumbnail.path + ".jpg"} alt="imgfiche" />
               <p>Id : {result._id} </p>
               <p>Title : {result.title} </p>
               <p>Description : {result.description} </p>

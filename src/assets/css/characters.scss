@@ -1,0 +1,32 @@
+body {
+    // background-color: black;
+    // width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    // margin:0 auto;
+        .page_characters {
+        display: flex;
+        object-fit: cover;
+        // flex-direction: column;
+        // justify-content: space-between;
+        // background-color: black;
+        width: 1200px;
+        // margin:0 auto;
+        // color:white;
+        // flex-wrap: wrap;
+        border: solid red 2px;
+        
+            .test {
+            display: flex;
+            object-fit: cover;
+        height: 200px;
+            width:200px;
+            padding: 5px;
+            border:solid black 1px;
+            margin: 5px;
+            object-fit: cover;
+        }
+    }
+}
+
+
