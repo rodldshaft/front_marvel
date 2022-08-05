@@ -1,11 +1,18 @@
+// Character.js
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 const Characters = () => {
+  let classthumbnail = "";
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [characterId, setCharacterId] = useState("");
   const navigate = useNavigate();
+  // if (input !== undefined) {
+  //   classthumbnail = "testhide";
+  // } else {
+  //   classthumbnail = "test";
+  // }
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
@@ -27,16 +34,16 @@ const Characters = () => {
     event.preventDefault();
     await setCharacterId(character_id);
     console.log(character_id);
-    navigate("/character");
+    navigate(`/character/${characterId}`);
   };
 
   console.log(data);
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
-    <main className="page_characters">
-      <div>
-        <p>Page personnage</p>
+    <main>
+      <p>Page personnage</p>
+      <div className="page_characters">
         {data.results.map((character, index) => {
           return (
             <div className="test" key={index}>
@@ -48,17 +55,20 @@ const Characters = () => {
                   handleClik_characters(event, character._id);
                 }}
               >
-                <img
-                  src={
-                    character.thumbnail.path +
-                    "." +
-                    character.thumbnail.extension
-                  }
-                  alt="imgfiche"
-                />
-                {/* <p>Id : {character._id} </p> */}
-                <p>Title : {character.title} </p>
-                {/* <p>Description : {character.description} </p> */}
+                <h2 className="title">{character.name} </h2>
+                <div className="thumbnail_bottom">
+                  <img
+                    className="picture"
+                    src={
+                      character.thumbnail.path +
+                      "." +
+                      character.thumbnail.extension
+                    }
+                    alt="imgfiche"
+                  />
+                  {/* <p>Id : {character._id} </p> */}
+                  <p> {character.description} </p>
+                </div>
               </Link>
             </div>
           );

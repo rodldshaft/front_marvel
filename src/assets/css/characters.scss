@@ -1,32 +1,99 @@
 body {
-    // background-color: black;
+    background-color: black;
     // width: 1200px;
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     // margin:0 auto;
-        .page_characters {
-        display: flex;
-        object-fit: cover;
-        // flex-direction: column;
-        // justify-content: space-between;
-        // background-color: black;
-        width: 1200px;
-        // margin:0 auto;
-        // color:white;
-        // flex-wrap: wrap;
-        border: solid red 2px;
         
-            .test {
-            display: flex;
-            object-fit: cover;
-        height: 200px;
-            width:200px;
-            padding: 5px;
-            border:solid black 1px;
-            margin: 5px;
-            object-fit: cover;
-        }
-    }
 }
 
+.page_characters {
+    display: flex;
+    // object-fit: cover;
+    flex-direction: row;
+    // justify-content:flex-start;
+    // background-color: blanchedalmond;
+    width: 1200px;
+    margin:0 auto;
+    // color:white;
+    flex-wrap: wrap;
+    // border: solid red 2px;
+        .test {
+                height: 400px;
+                width: calc(1200px/3 - 1rem*3/3);
+                margin-bottom: 1rem;
+                border:solid yellow 1px;
+                box-sizing: border-box;
+        }    
+        :not(:nth-child(3n)){
+            margin-right: 1rem;
+          }
+.test:hover {
+    background-color: whitesmoke;
+    text-shadow: 2px 2px 5px grey;
+    box-shadow:  0px 10px 10px gold;
+    p {
+        text-align:justify;
+        color: black;
+    }
 
+}
+        .test a {
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+                padding: 5px;
+                border:solid black 1px;
+                margin: 5px 5px;
+                box-sizing: border-box;
+                // background-color: burlywood;
+
+                div {
+                            display: flex;
+                            flex-direction: row;
+                            // object-fit: contain;
+                            // max-height: 300px;
+                            // max-width: 400px;
+                        }
+                h2 {
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    font-size: 3rem;
+                    text-decoration:none;
+                    color: red;
+                   text-align: center;
+                   margin-bottom: 0.5rem;
+
+                }
+                a {
+                    display: flex;
+                    object-fit: contain;
+                    // max-height: 300px;
+                    // max-width: 200px;
+                    box-sizing: border-box;
+                }
+            }
+        .thumbnail_bottom {
+                display: flex;
+                object-fit: contain;
+                flex-direction: row;
+                justify-content: space-between;
+                height: 100%;
+            }
+        .picture {
+                display: flex;
+                object-fit: cover;
+                height: 100%;
+                width: 50%;
+            }
+            p {
+                text-align:justify;
+                color: white;
+            }
+       
+        
+    }
+   
+    

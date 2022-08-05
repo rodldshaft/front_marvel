@@ -7,43 +7,64 @@ font-family: 'Arial Narrow', Arial, sans-serif;
 font-weight: 700;
 color: white;
 font-size: 3rem;
-border-bottom: solid white 2px;
+border-bottom: solid white 1px;
 // justify-content: space-between;
 // align-content: center;
 // justify-content: center;
-        .find {
+        .search {
 
             height: 4rem;
             display: flex;
             flex:2;
             border:solid black 1px;
             padding: 5px;
-            justify-content: center;
-            align-items: center;
+            // justify-content: center;
+            // align-items: center;
             border-radius: 5px;
+            font-size: 2rem;
+            color:white;
         }
         .banner-left {
+            height:100%;
             display: flex;
             flex:1;
-            justify-content: center;
-            align-content: center;
+            
+             align-items: center;
+            margin: 0 1rem;
+            object-fit: contain;
+            img {
+                height: 100%;
+                display: flex;
+                object-fit: cover;
+            }
+            .search{
+                display: flex;
+                align-items: center;
+                border-radius: 3rem;
+                margin-left:  1rem;
+                background-color: black;
+                border: solid grey 1px;
+                
+
+            }
+            
         }
 
         .banner-right {
         display: flex;
-        // flex: 1;
-        justify-content: center;
-        align-content: center;
+       
 
                 a {
                     display: flex;
-                    justify-content: center;
-                    align-content: center;
+
+                    line-height: 5rem;
                     border: solid black 1px;
                     border-radius: 5px;
                     flex: 1;
                     color:red;
-
+                    margin: 0 1rem;
+                    
+            
                 }
                 a:hover {
                     text-shadow: 2px 2px 5px white;

@@ -1,3 +1,4 @@
+// Characters.js
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Character = ({ characterId }) => {
@@ -32,13 +33,6 @@ const Character = ({ characterId }) => {
       <div>
         <p>Page personnage</p>
         {data.item.map((character, index) => {
-          // console.log(result[0].thumbnail.path);
-          // console.log(result.description);
-          // const keys = Object.keys(item);
-          // return <p key={index}>{result}</p>;
-          // {const pathpicture=({result.thumbnail.path} + ".jpeg" )}
-          // "http://i.annihil.us/u/prod/marvel/i/mg/3/a0/53c406e09649c"
-          //<img src={character.thumbnail.path + ".jpeg"} alt="imgfiche" />
           return (
             <div className="test" key={index}>
               <p>Fiche n°{index}</p>

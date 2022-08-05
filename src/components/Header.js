@@ -1,13 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/img/logo.svg";
 import "../assets/css/header.scss";
+import { useState, useEffect } from "react";
 
 const Header = () => {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+  const search = (input) => {
+    console.log(input);
+    navigate(`/characters`);
+  };
   return (
     <header>
       <nav className="banner-left">
         <img src={logo} alt="" />
-        <input className="find" type="text" />
+        <input
+          className="search"
+          type="text"
+          value={input}
+          onChange={(find) => {
+            setInput(find.target.value);
+            search(input);
+          }}
+        />
       </nav>
 
       <nav className="banner-right">
