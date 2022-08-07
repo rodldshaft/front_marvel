@@ -17,15 +17,13 @@ const Characters = () => {
 
         setDatas(response.data);
         setIsLoading(false);
-        datas.result.name.find();
-        console.log(datas);
       };
       fetchCharacter();
     } catch (error) {
       console.log(error.message);
     }
   }, []);
-  const handleClik_characters = async (event, character_id) => {
+  const handleClik_characters = async (event) => {
     event.preventDefault();
   };
 
@@ -40,7 +38,12 @@ const Characters = () => {
           return (
             <div className="test" key={index}>
               {/* <p>Fiche n°{index}</p> */}
-              <Link to={`/character/${character._id}`}>
+              <Link
+                to={`/character/${character._id}`}
+                onClick={(event) => {
+                  handleClik_characters(event);
+                }}
+              >
                 <h2 className="title">{character.name} </h2>
                 <div className="thumbnail_bottom">
                   <img
