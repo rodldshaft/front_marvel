@@ -4,15 +4,21 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Characters = () => {
-  const [datas, setDatas] = useState();
+  const [data_Characters, setData_Characters] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
+  const [skip_Characters, setSkip_Characters] = useState(60);
+  const [page, setPage] = useState(1);
+  const [count_pages, setCountPages] = useState();
+  // const skip_Characters = 12;
+  // console.log(skip_Characters);
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(`http://localhost:4000/characters`);
+        const response = await axios.get(
+          `http://localhost:4000/characters?skip=${skip_Characters}`
+        );
 
-        setDatas(response.data);
+        setData_Characters(response.data);
         setIsLoading(false);
       };
       fetchCharacter();
@@ -29,9 +35,20 @@ const Characters = () => {
     <div>En cours de chargement</div>
   ) : (
     <main>
+      <nav className="nav_left">
+        <button
+          onClick={() => {
+            setSkip_Characters(6 * (page - 1));
+            console.log({ skip_Characters });
+          }}
+        >
+          Page precedente
+        </button>
+      </nav>
+
       <p>Page personnage</p>
       <div className="page_characters">
-        {datas.results.map((character, index) => {
+        {data_Characters.results.map((character, index) => {
           return (
             <div className="test" key={index}>
               <Link
