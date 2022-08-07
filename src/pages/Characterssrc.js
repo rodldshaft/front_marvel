@@ -38,7 +38,7 @@ const Characters = () => {
           return (
             <div className="test" key={index}>
               {/* <p>Fiche n°{index}</p> */}
-              <Link to={`/character/${character._id}`}>
+              <Link to={`/character/${character._id}`} onClick=()>
                 <h2 className="title">{character.name} </h2>
                 <div className="thumbnail_bottom">
                   <img
