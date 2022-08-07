@@ -18,7 +18,21 @@ body {
     button:hover {
         background-color: beige;
     }
-    
+   .counter_pages {
+    margin-top: 2rem;
+        border:solid red 1px;
+        height: 3rem;
+        width: 12rem;
+        margin-right: 1rem;
+        color: white;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 2rem;
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
 
 }
 .page_characters {

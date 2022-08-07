@@ -1,4 +1,5 @@
 // Character.js
+
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,30 +7,30 @@ import { Link } from "react-router-dom";
 const Characters = () => {
   const [data_Characters, setData_Characters] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const [skip_Characters, setSkip_Characters] = useState(60);
+  const [skip_Characters, setSkip_Characters] = useState(0);
   const [page, setPage] = useState(1);
-  const [count_pages, setCountPages] = useState();
-  // const skip_Characters = 12;
-  // console.log(skip_Characters);
+  const [limit, setLimit] = useState(99);
+  const [counter_Characters, setCounter_Characters] = useState();
+  const [counter, setCounter] = useState(99);
+  const [limit_Page, setLimit_Page] = useState();
+  // const skip_Characters = 10;
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `http://localhost:4000/characters?skip=${skip_Characters}`
+          `http://localhost:4000/characters?limit=${limit}&skip=${skip_Characters}`
         );
 
         setData_Characters(response.data);
+
         setIsLoading(false);
+        setCounter_Characters(response.data.count);
       };
       fetchCharacter();
     } catch (error) {
       console.log(error.message);
     }
-  }, []);
-  const handleClik_characters = async (event) => {
-    event.preventDefault();
-    alert("clic ok");
-  };
+  }, [skip_Characters]);
 
   return isLoading === true ? (
     <div>En cours de chargement</div>
@@ -37,27 +38,42 @@ const Characters = () => {
     <main>
       <nav className="nav_left">
         <button
+          disabled={page === 1 ? true : false}
           onClick={() => {
-            setSkip_Characters(6 * (page - 1));
-            console.log({ skip_Characters });
+            setPage(page - 1);
+            setCounter(limit * page);
+            setSkip_Characters(limit * page);
+            // console.log(skip_Characters + "page " + page);
           }}
         >
           Page precedente
+        </button>
+        <p className="counter_pages">
+          <span>fiche N°</span> {counter - limit} <span>à </span>
+          {counter}
+        </p>
+        <button
+          disabled={counter + limit <= counter_Characters ? false : true}
+          onClick={() => {
+            setPage(page + 1);
+            setCounter(limit * page);
+            setSkip_Characters(limit * page);
+          }}
+        >
+          {counter + limit <= counter_Characters
+            ? "Page suivante"
+            : "Fin des fiches"}
         </button>
       </nav>
 
       <p>Page personnage</p>
       <div className="page_characters">
         {data_Characters.results.map((character, index) => {
+          // console.log(Math.trunc(counter_Characters / limit));
           return (
             <div className="test" key={index}>
-              <Link
-                to={`/character/${character._id}`}
-                // onClick={(event) => {
-                //   handleClik_characters(event);
-                // }}
-              >
-                <h2 className="title">{character.name} </h2>
+              <Link to={`/character/${character._id}`}>
+                <h2 className="title">{character.name}</h2>
                 <div className="thumbnail_bottom">
                   <img
                     className="picture"
