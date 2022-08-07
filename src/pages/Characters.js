@@ -39,7 +39,7 @@ const Characters = () => {
         <button
           disabled={page === 1 ? true : false}
           onClick={() => {
-            setPage(page - 1);
+            setPage(page - 1); //erreur bt au changement de bouton
             setCounter(limit * page);
             setSkip_Characters(limit * page);
           }}
@@ -53,7 +53,7 @@ const Characters = () => {
         <button
           disabled={counter + limit <= counter_Characters ? false : true}
           onClick={() => {
-            setPage(page + 1);
+            setPage(page + 1); //erreur bt au changement de bouton
             setCounter(limit * page);
             setSkip_Characters(limit * page);
           }}
