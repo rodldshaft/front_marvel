@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/img/logo.svg";
 import "../assets/css/header.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Header = () => {
   const [input, setInput] = useState("");

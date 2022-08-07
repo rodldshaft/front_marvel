@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const Comics = () => {
-  const [comicId, setComicId] = useState();
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -28,11 +27,6 @@ const Comics = () => {
       <div>
         <p>Page Comics</p>
         {data.results.map((result, index) => {
-          // console.log(result[0].thumbnail.path);
-          // console.log(result.description);
-          // const keys = Object.keys(item);
-          // return <p key={index}>{result}</p>;
-          // {const pathpicture=({result.thumbnail.path} + ".jpeg" )}
           return (
             <div className="comic" key={index}>
               <Link to={`/comic/${result._id}`}>
