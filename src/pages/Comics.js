@@ -7,7 +7,7 @@ const Comics = () => {
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(`http://localhost:4000/comics`);
+        const response = await axios.get(`${process.env.SITE}/comics`);
 
         setData(response.data);
         setIsLoading(false);

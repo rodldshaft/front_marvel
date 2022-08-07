@@ -17,7 +17,7 @@ const Characters = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `http://localhost:4000/characters?limit=${limit}&skip=${skip_Characters}`
+          `${process.env.SITE}/characters?limit=${limit}&skip=${skip_Characters}`
         );
 
         setData_Characters(response.data);
