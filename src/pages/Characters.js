@@ -13,7 +13,7 @@ const Characters = () => {
   const [counter_Characters, setCounter_Characters] = useState();
   const [counter, setCounter] = useState(99);
   const [limit_Page, setLimit_Page] = useState();
-  // const skip_Characters = 10;
+
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
@@ -43,7 +43,6 @@ const Characters = () => {
             setPage(page - 1);
             setCounter(limit * page);
             setSkip_Characters(limit * page);
-            // console.log(skip_Characters + "page " + page);
           }}
         >
           Page precedente
@@ -69,7 +68,6 @@ const Characters = () => {
       <p>Page personnage</p>
       <div className="page_characters">
         {data_Characters.results.map((character, index) => {
-          // console.log(Math.trunc(counter_Characters / limit));
           return (
             <div className="test" key={index}>
               <Link to={`/character/${character._id}`}>
