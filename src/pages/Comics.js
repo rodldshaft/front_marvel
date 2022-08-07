@@ -8,10 +8,7 @@ const Comics = () => {
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(
-          `http://localhost:4000/comics`
-          // `https://lereacteur-vinted-api.herokuapp.com/offers`
-        );
+        const response = await axios.get(`http://localhost:4000/comics`);
 
         setData(response.data);
         setIsLoading(false);

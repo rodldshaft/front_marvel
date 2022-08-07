@@ -41,7 +41,6 @@ const Character = () => {
           src={data.thumbnail.path + "." + data.thumbnail.extension}
           alt="imgfiche"
         />
-
         <p>description : {data.description} </p>
         {/* {data.results.comics.map((comics, index) => {
           <div className="char">comics</div>;

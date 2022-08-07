@@ -3,7 +3,24 @@ body {
    
         
 }
+.nav_left {
+    display: flex;
+    justify-content: center;
+    button{
+        
+        // flex-direction: row;
+        width: 10rem;
+        height: 3rem;
+        border: solid red 1px;
+        margin-right: 1rem;
+        margin-top: 2rem;
+    }
+    button:hover {
+        background-color: beige;
+    }
+    
 
+}
 .page_characters {
     display: flex;
     flex-direction: row;

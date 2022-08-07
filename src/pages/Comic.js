@@ -29,7 +29,7 @@ const Comic = () => {
     <div>
       <div>
         <p>Page Comics</p>
-        {data.results.map((result, index) => {
+        {/*data.results.map((result, index) => {
           // console.log(result[0].thumbnail.path);
           // console.log(result.description);
           // const keys = Object.keys(item);
@@ -42,10 +42,10 @@ const Comic = () => {
               <img src={result.thumbnail.path + ".jpg"} alt="imgfiche" />
               <p>Id : {result._id} </p>
               <p>Title : {result.title} </p>
-              <p>Description : {result.description} </p> */}
+              <p>Description : {result.description} </p> }
             </div>
           );
-        })}
+        })*/}
       </div>
     </div>
   );
