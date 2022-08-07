@@ -12,7 +12,6 @@ const Characters = () => {
   const [limit, setLimit] = useState(99);
   const [counter_Characters, setCounter_Characters] = useState();
   const [counter, setCounter] = useState(99);
-  const [limit_Page, setLimit_Page] = useState();
 
   useEffect(() => {
     try {
