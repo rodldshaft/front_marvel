@@ -29,10 +29,7 @@ const Comic = () => {
     <div>
       <div>
         <p>Page Comics</p>
-        {/*
-            
-          
-        */}
+        {console.log(data)}
       </div>
     </div>
   );
