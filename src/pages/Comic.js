@@ -10,13 +10,11 @@ const Comic = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `http://localhost:4000/comics/${comicId}`
-          // `https://lereacteur-vinted-api.herokuapp.com/offers`
+          `http://localhost:4000/comic/${comicId}`
         );
 
         setData(response.data);
         setIsLoading(false);
-        // console.log({ data });
       };
       fetchCharacter();
     } catch (error) {
