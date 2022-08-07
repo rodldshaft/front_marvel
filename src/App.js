@@ -1,6 +1,6 @@
 // require("dotenv").config();
 //lien vers le fichier css
-import { useState, useEffect } from "react";
+
 import "./App.scss";
 //lien vers le browserRouter  (avec alias Router) du package react-router-dom
 // alias qui simplifie la syntaxe
