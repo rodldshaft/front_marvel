@@ -5,17 +5,15 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 const Character = () => {
   const { characterId } = useParams();
-  // console.log("page character :" + characterId);
+
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  // const characterId = "5fcf91f4d8a2480017b91453";
-  // console.log("characterId zz : " + characterId);
+
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `http://localhost:4000/character/${characterId}`
-          // `https://lereacteur-vinted-api.herokuapp.com/offers`
+          `${process.env.SITE}/character/${characterId}`
         );
 
         setData(response.data);
@@ -42,9 +40,6 @@ const Character = () => {
           alt="imgfiche"
         />
         <p>description : {data.description} </p>
-        {/* {data.results.comics.map((comics, index) => {
-          <div className="char">comics</div>;
-        })} */}
       </div>
     </div>
   );
