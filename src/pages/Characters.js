@@ -9,7 +9,7 @@ const Characters = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [skip_Characters, setSkip_Characters] = useState(0);
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(99);
+  const limit = 99;
   const [counter_Characters, setCounter_Characters] = useState();
   const [counter, setCounter] = useState(99);
 
