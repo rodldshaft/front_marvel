@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Characters = () => {
-  const [datas, setDatas] = useState();
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -15,10 +15,9 @@ const Characters = () => {
           // `https://lereacteur-vinted-api.herokuapp.com/offers`
         );
 
-        setDatas(response.data);
+        setData(response.data);
         setIsLoading(false);
-        datas.result.name.find();
-        console.log(datas);
+        // console.log({ data });
       };
       fetchCharacter();
     } catch (error) {
@@ -35,8 +34,7 @@ const Characters = () => {
     <main>
       <p>Page personnage</p>
       <div className="page_characters">
-        {datas.results.map((character, index) => {
-          // console.log(character.find({ name: "ascending" }));
+        {data.results.map((character, index) => {
           return (
             <div className="test" key={index}>
               {/* <p>Fiche n°{index}</p> */}

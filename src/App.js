@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
+import Comic from "./pages/Comic";
 // fonction des base react
 function App() {
   return (
@@ -20,8 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Characters />} />
         <Route path="/characters" element={<Characters />} />
-        <Route path="/character" element={<Character />} />
+        <Route path="/character/:characterId" element={<Character />} />
         <Route path="/comics" element={<Comics />} />
+        <Route path="/comic/:comicId" element={<Comic />} />
       </Routes>
     </Router>
   );

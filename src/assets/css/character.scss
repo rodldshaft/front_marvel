@@ -1,16 +1,23 @@
 body {
     background-color: black;
-   
+    // width: 1200px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // margin:0 auto;
         
 }
 
 .page_characters {
     display: flex;
+    // object-fit: cover;
     flex-direction: row;
-   
+    // justify-content:flex-start;
+    // background-color: blanchedalmond;
     width: 1200px;
     margin:0 auto;
+    // color:white;
     flex-wrap: wrap;
+    // border: solid red 2px;
         .test {
                 height: 400px;
                 width: calc(1200px/3 - 1rem*3/3);
@@ -42,10 +49,14 @@ body {
                 border:solid black 1px;
                 margin: 5px 5px;
                 box-sizing: border-box;
+                // background-color: burlywood;
+
                 div {
                             display: flex;
                             flex-direction: row;
-
+                            // object-fit: contain;
+                            // max-height: 300px;
+                            // max-width: 400px;
                         }
                 h2 {
                     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -59,7 +70,8 @@ body {
                 a {
                     display: flex;
                     object-fit: contain;
-
+                    // max-height: 300px;
+                    // max-width: 200px;
                     box-sizing: border-box;
                 }
             }
@@ -76,12 +88,13 @@ body {
                 height: 100%;
                 width: 50%;
             }
-            p {
-                text-align:justify;
-                color: white;
-            }
+            
        
         
     }
    
-    
+    .character p {
+    border: solid red 2px;;
+                text-align:justify;
+                color: white;
+            }

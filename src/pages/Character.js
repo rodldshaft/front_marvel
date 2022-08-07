@@ -1,11 +1,15 @@
-// Characters.js
+// Character.js
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import axios from "axios";
-const Character = ({ characterId }) => {
+const Character = () => {
+  const { characterId } = useParams();
+  // console.log("page character :" + characterId);
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  characterId = "5fcf91f4d8a2480017b91453";
-  console.log("characterId zz" + characterId);
+  // const characterId = "5fcf91f4d8a2480017b91453";
+  // console.log("characterId zz : " + characterId);
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
@@ -15,40 +19,33 @@ const Character = ({ characterId }) => {
         );
 
         setData(response.data);
+
         setIsLoading(false);
-        // console.log({ data });
-        console.log("characterId" + characterId);
       };
+
       fetchCharacter();
     } catch (error) {
       console.log(error.message);
     }
-  }, []);
+  }, [characterId]);
 
-  // console.log(result.thunbnail);
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
     <div>
-      <div>
-        <p>Page personnage</p>
-        {data.item.map((character, index) => {
-          return (
-            <div className="test" key={index}>
-              <p>Fiche n°{index}</p>
+      <div className="character">
+        <p>Page personnage {characterId}</p>
+        <p>Id : {data._id} </p>
+        <p>Title : {data.name} </p>
+        <img
+          src={data.thumbnail.path + "." + data.thumbnail.extension}
+          alt="imgfiche"
+        />
 
-              <img
-                src={
-                  character.thumbnail.path + "." + character.thumbnail.extension
-                }
-                alt="imgfiche"
-              />
-              <p>Id : {character._id} </p>
-              <p>Title : {character.title} </p>
-              <p>Description : {character.description} </p>
-            </div>
-          );
-        })}
+        <p>description : {data.description} </p>
+        {/* {data.results.comics.map((comics, index) => {
+          <div className="char">comics</div>;
+        })} */}
       </div>
     </div>
   );
