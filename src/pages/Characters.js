@@ -10,10 +10,7 @@ const Characters = () => {
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(
-          `http://localhost:4000/characters`
-          // `https://lereacteur-vinted-api.herokuapp.com/offers`
-        );
+        const response = await axios.get(`http://localhost:4000/characters`);
 
         setDatas(response.data);
         setIsLoading(false);
@@ -25,6 +22,7 @@ const Characters = () => {
   }, []);
   const handleClik_characters = async (event) => {
     event.preventDefault();
+    alert("clic ok");
   };
 
   return isLoading === true ? (
@@ -34,15 +32,13 @@ const Characters = () => {
       <p>Page personnage</p>
       <div className="page_characters">
         {datas.results.map((character, index) => {
-          // console.log(character.find({ name: "ascending" }));
           return (
             <div className="test" key={index}>
-              {/* <p>Fiche n°{index}</p> */}
               <Link
                 to={`/character/${character._id}`}
-                onClick={(event) => {
-                  handleClik_characters(event);
-                }}
+                // onClick={(event) => {
+                //   handleClik_characters(event);
+                // }}
               >
                 <h2 className="title">{character.name} </h2>
                 <div className="thumbnail_bottom">
@@ -55,9 +51,7 @@ const Characters = () => {
                     }
                     alt="imgfiche"
                   />
-                  {/* <p>Id : {character._id} </p> */}
                   <p> {character.description} </p>
-                  {/* {console.log({ characterId })} */}
                 </div>
               </Link>
             </div>
