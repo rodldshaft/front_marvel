@@ -20,6 +20,7 @@ const Characters = () => {
           `${process.env.SITE}characters?limit=${limit}&skip=${skip_Characters}`
         );
 
+        console.log(process.env.SITE);
         setData_Characters(response.data);
 
         setIsLoading(false);
