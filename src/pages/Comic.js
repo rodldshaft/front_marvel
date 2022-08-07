@@ -9,7 +9,9 @@ const Comic = () => {
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(`${process.env.SITE}comic/${comicId}`);
+        const response = await axios.get(
+          `${process.env.SITE3}comic/${comicId}`
+        );
 
         setData(response.data);
         setIsLoading(false);

@@ -17,7 +17,7 @@ const Characters = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `${process.en.SITE3}characters?limit=${limit}&skip=${skip_Characters}`
+          `${process.env.SITE3}characters?limit=${limit}&skip=${skip_Characters}`
         );
 
         console.log(process.env.SITE3);

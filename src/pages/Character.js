@@ -13,7 +13,7 @@ const Character = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `${process.env.SITE}character/${characterId}`
+          `${process.env.SITE3}character/${characterId}`
         );
 
         setData(response.data);

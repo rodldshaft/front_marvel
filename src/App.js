@@ -1,4 +1,8 @@
-// require("dotenv").config();
+import "dotenv/config"; // es6
+// require("dotenv").config(); ES5
+//console.log(process.env)
+
+// import express from "express";
 import "./App.scss";
 
 //lien vers le fichier css
