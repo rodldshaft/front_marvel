@@ -17,10 +17,10 @@ const Characters = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `${process.env.SITE}characters?limit=${limit}&skip=${skip_Characters}`
+          `${process.en.SITE3}characters?limit=${limit}&skip=${skip_Characters}`
         );
 
-        console.log(process.env.SITE);
+        console.log(process.env.SITE3);
         setData_Characters(response.data);
 
         setIsLoading(false);

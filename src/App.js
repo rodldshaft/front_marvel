@@ -1,7 +1,8 @@
 // require("dotenv").config();
+import "./App.scss";
+
 //lien vers le fichier css
 
-import "./App.scss";
 //lien vers le browserRouter  (avec alias Router) du package react-router-dom
 // alias qui simplifie la syntaxe
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -11,6 +12,7 @@ import Characters from "./pages/Characters";
 import Character from "./pages/Character";
 import Comics from "./pages/Comics";
 import Comic from "./pages/Comic";
+// require("dotenv").config();
 // fonction des base react
 function App() {
   return (
