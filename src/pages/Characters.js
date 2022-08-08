@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+const SITE = "https://v1marvel.herokuapp.com/";
+const SITE2 = "http://localhost:4000/";
 const Characters = () => {
   const [data_Characters, setData_Characters] = useState();
   const [isLoading, setIsLoading] = useState(true);
@@ -17,10 +18,10 @@ const Characters = () => {
     try {
       const fetchCharacter = async () => {
         const response = await axios.get(
-          `${process.env.SITE3}characters?limit=${limit}&skip=${skip_Characters}`
+          `${SITE}characters?limit=${limit}&skip=${skip_Characters}`
         );
 
-        console.log(process.env.SITE3);
+        console.log(SITE);
         setData_Characters(response.data);
 
         setIsLoading(false);

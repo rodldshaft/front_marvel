@@ -18,6 +18,7 @@ import Comics from "./pages/Comics";
 import Comic from "./pages/Comic";
 // require("dotenv").config();
 // fonction des base react
+
 function App() {
   return (
     // Router est la balise (du a l'alias au dessus) react-router-dom qui encadre le HTML

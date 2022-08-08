@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const SITE = "https://v1marvel.herokuapp.com/";
+const SITE2 = "http://localhost:4000/";
 const Comics = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(`${process.env.SITE3}comics`);
+        const response = await axios.get(`${SITE}comics`);
 
         setData(response.data);
         setIsLoading(false);

@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import axios from "axios";
+const SITE = "https://v1marvel.herokuapp.com/";
+const SITE2 = "http://localhost:4000/";
 const Character = () => {
   const { characterId } = useParams();
 
@@ -12,9 +14,7 @@ const Character = () => {
   useEffect(() => {
     try {
       const fetchCharacter = async () => {
-        const response = await axios.get(
-          `${process.env.SITE3}character/${characterId}`
-        );
+        const response = await axios.get(`${SITE}character/${characterId}`);
 
         setData(response.data);
 
