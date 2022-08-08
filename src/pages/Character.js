@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import axios from "axios";
 const SITE = "https://v1marvel.herokuapp.com/";
-const SITE2 = "http://localhost:4000/";
+// const SITE2 = "http://localhost:4000/";
 const Character = () => {
   const { characterId } = useParams();
 

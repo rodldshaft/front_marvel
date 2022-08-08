@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 const SITE = "https://v1marvel.herokuapp.com/";
-const SITE2 = "http://localhost:4000/";
+// const SITE2 = "http://localhost:4000/";
 const Characters = () => {
   const [data_Characters, setData_Characters] = useState();
   const [isLoading, setIsLoading] = useState(true);

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 const SITE = "https://v1marvel.herokuapp.com/";
-const SITE2 = "http://localhost:4000/";
+// const SITE2 = "http://localhost:4000/";
 const Comic = () => {
   const comicId = useParams();
   const [data, setData] = useState();

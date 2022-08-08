@@ -1,4 +1,4 @@
-import "dotenv/config"; // es6
+// import "dotenv/config"; // es6
 // require("dotenv").config(); ES5
 //console.log(process.env)
 
